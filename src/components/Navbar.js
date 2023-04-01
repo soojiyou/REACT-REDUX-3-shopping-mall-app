@@ -1,8 +1,8 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser } from '@fortawesome/free-regular-svg-icons'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 
 /*
@@ -18,6 +18,13 @@ const Navbar = () => {
 
     const goToLogin = () => {
         navigate("/login");
+    }
+    const search = (e) => {
+        if (e.key === "Enter") {
+            let keyword = e.target.value;
+            navigate(`/?q=${keyword}`)
+
+        }
     }
 
     return (
@@ -42,7 +49,7 @@ const Navbar = () => {
 
                 <div className='search-box'>
                     <FontAwesomeIcon icon={faSearch} />
-                    <input className='input-bar' type="text"></input>
+                    <input className='input-bar' type="text" onKeyDown={(e) => search(e)}></input>
 
                 </div>
             </div>

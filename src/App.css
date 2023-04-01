@@ -55,3 +55,9 @@
 .login-form {
   width: 50%;
 }
+
+/* ProductDetail.js */
+.product-img {
+  display: flex;
+  justify-content: flex-end;
+}
